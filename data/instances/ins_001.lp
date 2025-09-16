@@ -8,7 +8,7 @@ row(3,"Ascended; awakened").
 row(4,"To put into action").
 col(0,"Mindful; conscious").
 col(1,"A gadget").
-col(2,"Notched or uneven, as if gnawed away (cognate with "erode")").
+col(2,"Notched or uneven, as if gnawed away (cognate with 'erode')").
 col(3,"Not ever").
 col(4,"Drenched; drowned").
 

@@ -1,5 +1,10 @@
+% Auxillaries (grid and letters)
 d(0..4).
+l(a;b;c;d;e;f;g;h;i;j;k;l;m;n;o;p;q;r;s;t;u;v;w;x;y;z).
 
-l(a).l(b).l(c).l(d).l(e).l(f).l(g).l(h).l(i).l(j).l(k).l(l).l(m).l(n).l(o).l(p).l(q).l(r).l(s).l(t).l(u).l(v).l(w).l(x).l(y).l(z).
+1 {answer(X,Y,L): l(L)} :- d(X), d(Y).
 
-1 {answer(X,Y,L): l(L)} 1 :- d(X), d(Y).
+% Set no_duplicates to control for answers with only one letter per field
+#external duplicates.
+:- answer(X,Y,L1), answer(X,Y,L2), L1<L2, not duplicates.
+

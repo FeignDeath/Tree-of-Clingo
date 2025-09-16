@@ -1,0 +1,246 @@
+tree version 1.0
+Reading from data/instances/ins_001.lp
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 2159.591s (Solving: 2047.18s 1st Model: 0.00s Unsat: 2047.18s)
+CPU Time     : 0.081s
+Initial Thoughts:
+677 ('h3', 'risen', 'high')
+678 ('h4', 'enact', 'high')
+679 ('v0', 'aware', 'high')
+680 ('v3', 'never', 'high')
+DECIDE:
+677 ('h3', 'risen', 'high')
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+r i s e n 
+_ _ _ _ _ 
+
+PROPAGATE:
+Previous [677]
+682 ('h1', 'cable', 'medium')
+DECIDE:
+682 ('h1', 'cable', 'medium')
+_ _ _ _ _ 
+c a b l e 
+_ _ _ _ _ 
+r i s e n 
+_ _ _ _ _ 
+
+PROPAGATE:
+Previous [682]
+683 ('h2', 'rouse', 'high')
+684 ('h2', 'ousts', 'low')
+685 ('h4', 'acton', 'low')
+DECIDE:
+683 ('h2', 'rouse', 'high')
+_ _ _ _ _ 
+c a b l e 
+r o u s e 
+r i s e n 
+_ _ _ _ _ 
+
+PROPAGATE:
+Previous [683]
+No more thoughts.
+UNDO:
+[683]
+DECIDE:
+684 ('h2', 'ousts', 'low')
+_ _ _ _ _ 
+c a b l e 
+o u s t s 
+r i s e n 
+_ _ _ _ _ 
+
+PROPAGATE:
+Previous [684]
+No more thoughts.
+UNDO:
+[684]
+DECIDE:
+685 ('h4', 'acton', 'low')
+_ _ _ _ _ 
+c a b l e 
+_ _ _ _ _ 
+r i s e n 
+a c t o n 
+
+PROPAGATE:
+Previous [685]
+686 ('h2', 'rouse', 'low')
+DECIDE:
+686 ('h2', 'rouse', 'low')
+_ _ _ _ _ 
+c a b l e 
+r o u s e 
+r i s e n 
+a c t o n 
+
+PROPAGATE:
+Previous [686]
+No more thoughts.
+UNDO:
+[686]
+No thoughts!
+UNDO:
+[685]
+No thoughts!
+UNDO:
+[682]
+No thoughts!
+UNDO:
+[677]
+DECIDE:
+678 ('h4', 'enact', 'high')
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+e n a c t 
+
+PROPAGATE:
+Previous [678]
+687 ('h3', 'risen', 'high')
+DECIDE:
+687 ('h3', 'risen', 'high')
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+r i s e n 
+e n a c t 
+
+PROPAGATE:
+Previous [687]
+688 ('h2', 'rouse', 'high')
+689 ('h1', 'cable', 'low')
+DECIDE:
+688 ('h2', 'rouse', 'high')
+_ _ _ _ _ 
+_ _ _ _ _ 
+r o u s e 
+r i s e n 
+e n a c t 
+
+PROPAGATE:
+Previous [688]
+No more thoughts.
+UNDO:
+[688]
+DECIDE:
+689 ('h1', 'cable', 'low')
+_ _ _ _ _ 
+c a b l e 
+_ _ _ _ _ 
+r i s e n 
+e n a c t 
+
+PROPAGATE:
+Previous [689]
+690 ('h2', 'rouse', 'low')
+DECIDE:
+690 ('h2', 'rouse', 'low')
+_ _ _ _ _ 
+c a b l e 
+r o u s e 
+r i s e n 
+e n a c t 
+
+PROPAGATE:
+Previous [690]
+No more thoughts.
+UNDO:
+[690]
+No thoughts!
+UNDO:
+[689]
+No thoughts!
+UNDO:
+[687]
+No thoughts!
+UNDO:
+[678]
+DECIDE:
+679 ('v0', 'aware', 'high')
+a _ _ _ _ 
+w _ _ _ _ 
+a _ _ _ _ 
+r _ _ _ _ 
+e _ _ _ _ 
+
+PROPAGATE:
+Previous [679]
+No more thoughts.
+UNDO:
+[679]
+_ _ _ n _ 
+_ _ _ e _ 
+_ _ _ v _ 
+_ _ _ e _ 
+_ _ _ r _ 
+
+PROPAGATE:
+Previous [680]
+691 ('h3', 'risen', 'high')
+692 ('v0', 'aware', 'high')
+DECIDE:
+691 ('h3', 'risen', 'high')
+_ _ _ n _ 
+_ _ _ e _ 
+_ _ _ v _ 
+r i s e n 
+_ _ _ r _ 
+
+PROPAGATE:
+Previous [691]
+693 ('h4', 'start', 'low')
+DECIDE:
+693 ('h4', 'start', 'low')
+_ _ _ n _ 
+_ _ _ e _ 
+_ _ _ v _ 
+r i s e n 
+s t a r t 
+
+PROPAGATE:
+Previous [693]
+No more thoughts.
+UNDO:
+[693]
+No thoughts!
+UNDO:
+[691]
+DECIDE:
+692 ('v0', 'aware', 'high')
+a _ _ n _ 
+w _ _ e _ 
+a _ _ v _ 
+r _ _ e _ 
+e _ _ r _ 
+
+PROPAGATE:
+Previous [692]
+694 ('h3', 'risen', 'high')
+DECIDE:
+694 ('h3', 'risen', 'high')
+a _ _ n _ 
+w _ _ e _ 
+a _ _ v _ 
+r i s e n 
+e _ _ r _ 
+
+PROPAGATE:
+Previous [694]
+No more thoughts.
+UNDO:
+[694]
+No thoughts!
+UNDO:
+[692]
+No thoughts!
+UNDO:
+[680]
