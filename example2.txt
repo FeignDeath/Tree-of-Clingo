@@ -1,0 +1,3 @@
+tree version 1.0
+Reading from data/instances/ins_001.lp
+Solving...

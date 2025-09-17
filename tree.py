@@ -1,18 +1,107 @@
-import enum
+import copy
 import itertools
 import os
 import re
 import sys
 
 from clingo.application import Flag, clingo_main, Application
-from clingo.propagator import Assignment, Propagator, PropagatorCheckMode
+from clingo.propagator import Propagator, PropagatorCheckMode
 from clingo.symbol import Function
+from prompts import propose
+from prompts import evaluate
 
 from ollama import chat
 
 VERBOSE = 1
-SAMPLING = 2
+SAMPLING = 1
 BREADTH = 5
+
+class Grid():
+    def __init__(self):
+        """
+        Initializes the grid object, which tracks the current_grid and saves previous states for backtracking.
+        """
+
+        self.current_grid = [["_"]*5 for _ in range(5)]
+        self.states = {0:copy.deepcopy(self.current_grid)}
+        self.current = 0
+
+    def add(self, id:str, word:str):
+        """
+        Adds a new word to the grid.
+
+        Parameters
+        ----------
+        id : str
+            The position of the word. e.g. h0 for the first horizontal word.
+        word : str
+            The word to be entered.
+        """
+
+        for i,w in enumerate(word):
+            if "h" in id:
+                self.current_grid[int(id[-1])][i] = w
+            else:
+                self.current_grid[i][int(id[-1])] = w
+
+        self.current += 1
+        self.states[self.current] = copy.deepcopy(self.current_grid)
+
+    def back(self):
+        """
+        Reverts to the previous state.
+        """
+
+        self.states.pop(self.current)
+        self.current -= 1
+        self.current_grid = copy.deepcopy(self.states[self.current])
+
+    def get(self):
+        """
+        Returns the grid as a list of lists.
+
+        Returns
+        -------
+        output : list[list[str]]
+        """
+
+        return self.current_grid
+
+    def get_str(self):
+        """
+        Returns the grid as string with linebreaks for printing.
+
+        Returns
+        -------
+        output : str
+        """
+
+        output = ""
+        for i in self.current_grid:
+            for j in i:
+                output += f"{j} "
+            output += "\n"
+        return output
+
+class LocalLLM():
+    def __init__(self, model, limit = 500):
+        self.model = model
+        self.limit = limit
+
+    def _message(self, message, history = []):
+        response = chat(model=self.model, messages=history+[message], options={"num_predict":self.limit})
+        # Removing the * is necessary due to the LLMs always wanting to answer markdown
+        return response["message"]["content"].replace("*","")
+
+    def think(self, input):
+        message = propose.message
+        message["content"] = message["content"].replace("{input}",input)
+        return self._message(message,propose.history)
+
+    def question(self, input):
+        message = evaluate.message
+        message["content"] = message["content"].replace("{input}",input)
+        return self._message(message,evaluate.history)
 
 class SumPropagator(Propagator):
     def __init__(self, model, check_answers):
@@ -23,15 +112,93 @@ class SumPropagator(Propagator):
             for j in range(5):
                 self.atom_lit[i][j] = {}
 
+        # To store what literals correspond to which thoughts.
         self.lit_thought = {}
 
+        # Store initial hints
         self.row = [""]*5
         self.col = [""]*5
 
+        # Define an order for sorting thoughts
         self.ranking_order = {"certain": 0, "high": 1, "medium": 2, "low": 3}
 
-        self._model = model
+        # Stores seting whether answers are checked
         self._check_answers = check_answers
+
+        # Tracks the state of the grid with the ability to add a new on top and to backtrack
+        self.grid = Grid()
+
+        # Initialize the LLM wrapper for easier calling
+        self.llm = LocalLLM(model)
+
+    def _get_thoughts(self, assignment):
+        # Generate Input
+        state = ""
+        # Place, hint and situation for rows
+        for i,r in enumerate(self.row):
+            situation = "".join(self.grid.get()[i])
+            state += f"h{i}. {r}, state={situation}\n"
+        # Place, hint and situation for cols
+        for i,c in enumerate(self.col):
+            situation = "".join([row[i] for row in self.grid.get()])
+            state += f"v{i}. {c}, state={situation}\n"
+
+        output = ""
+        for _ in range(SAMPLING):
+            output += self.llm.think(state)
+        if VERBOSE > 2: print(output)
+
+        # Regular expression pattern to find all expresions of the for "h1 words high"
+        pattern1 = r"[hv][0-4]\S\s\w{5}\s\((?:certain|high|medium|low)\)"
+        choices1 = re.findall(pattern1, output)
+
+        pattern21 = r"[hv][0-4]\S.*?\n- \w{5}\s\((?:certain|high|medium|low)\)"
+        choices2 = re.findall(pattern21, output)
+        pattern22 = r"[hv][0-4]\S.*?\n.*?\n- \w{5}\s\((?:certain|high|medium|low)\)"
+        choices2 += re.findall(pattern22, output)
+
+        possible_list = set()
+        for c in choices2:
+            place = c.split("\n")[0][0:2]
+            word = c.split("\n")[-1].split(" ")[-2].lower()
+            ranking = c.split("\n")[-1].split(" ")[-1][1:-1]
+            possible_list.add((place,word,ranking))
+
+        # Transform the strings into proper tuples
+        for c in choices1:
+            parts = c.split(" ")
+            place = parts[0][0:-1]
+            word = parts[1].lower()
+            ranking = parts[2][1:-1]
+            possible_list.add((place, word, ranking))
+
+        tuples_list = set()
+        for candidate in possible_list:
+            place = candidate[0]
+            word = candidate[1]
+            # Check whether all is possible with the current assignement
+            possible = True
+            for i,w in enumerate(word):
+                if "h" in place:
+                    lit = self.atom_lit[int(place[-1])][i][w]
+                    if assignment.is_false(lit):
+                        possible = False
+                if "v" in place:
+                    lit = self.atom_lit[i][int(place[-1])][w]
+                    if assignment.is_false(lit):
+                        possible = False
+
+            # Only append things which are possible
+            if possible and not any(candidate[0:2] == value[0:2] for value in self.lit_thought.values()):
+                tuples_list.add(candidate)
+
+        # Sort them by their assigned probability
+        tuples_list = sorted(tuples_list, key=lambda x: self.ranking_order[x[2]])
+
+        if len(tuples_list) > BREADTH:
+            return tuples_list[0:5]
+        else:
+            return(tuples_list)
 
     def thought_structure(self, control, changes = []):
         # This creates the corresponding structure for the thoughts for the propagator to use
@@ -80,96 +247,6 @@ class SumPropagator(Propagator):
         if VERBOSE > 0: print("Initial Thoughts:")
         self.thought_structure(init)
 
-    def _get_grid(self, assignment):
-        grid = [["_"]*5]*5
-        for i in self.atom_lit:
-            for j in self.atom_lit[i]:
-                for l in self.atom_lit[i][j]:
-                    if assignment.is_true(self.atom_lit[i][j][l]):
-                        grid[i][j] = l
-        return grid
-
-    def _print_grid(self, assignment):
-        grid = ""
-        for i in self.atom_lit:
-            for j in self.atom_lit[i]:
-                to_print = "_"
-                for l in self.atom_lit[i][j]:
-                    if assignment.is_true(self.atom_lit[i][j][l]):
-                        to_print = l
-                grid += f"{to_print} "
-            grid += "\n"
-        return grid
-
-    def _get_thoughts(self, assignment):
-        with open("prompts/propose.txt", "r") as file:
-            template = file.read()
-
-        # Generate Input
-        state = ""
-        # Place, hint and situation for rows
-        for i,r in enumerate(self.row):
-            situation = "".join(self._get_grid(assignment)[i])
-            state += f"h{i}. {r}, state={situation}\n"
-        # Place, hint and situation for cols
-        for i,c in enumerate(self.col):
-            situation = "".join([row[i] for row in self._get_grid(assignment)])
-            state += f"v{i}. {c}, state={situation}\n"
-
-        # Add the current grid (probably as useless as the situation)
-        state += "\n"
-        state += self._print_grid(assignment)
-
-        # Add the input to the template for the finished prompt
-        prompt = template.replace("{input}", state)
-
-        output = ""
-        for i in range(SAMPLING):
-            response = chat(model=self._model, messages=[
-                {
-                    "role" : "user",
-                    "content" : prompt,
-                }
-            ], options={"num_predict":400})
-            output += response["message"]["content"]
-
-        # Regular expression pattern to find all expresions of the for "h1 words high"
-        pattern = r"[hv][0-4]\S\s\w{5}\s\((?:certain|high|medium|low)\)"
-        choices = re.findall(pattern, output)
-
-        # Transform the strings into proper tuples
-        tuples_list = set()
-        for c in choices:
-            parts = c.split(" ")
-            place = parts[0][0:-1]
-            word = parts[1].lower()
-            ranking = parts[2][1:-1]
-            t = (place, word, ranking)
-
-            # Check whether all is possible with the current assignement
-            possible = True
-            for i,w in enumerate(word):
-                if "h" in place:
-                    lit = self.atom_lit[int(place[-1])][i][w]
-                    if assignment.is_false(lit):
-                        possible = False
-                if "v" in place:
-                    lit = self.atom_lit[i][int(place[-1])][w]
-                    if assignment.is_false(lit):
-                        possible = False
-
-            # Only append things which are possible
-            if possible and not any(t[0:2] == value[0:2] for value in self.lit_thought.values()):
-                tuples_list.add(t)
-
-        # Sort them by their assigned probability
-        tuples_list = sorted(tuples_list, key=lambda x: self.ranking_order[x[2]])
-
-        if len(tuples_list) > BREADTH:
-            return tuples_list[0:5]
-        else:
-            return(tuples_list)
-
     def decide(self, thread_id, assignment, fallback):
         if VERBOSE > 0: print("DECIDE:")
         choosen = min(
@@ -186,7 +263,7 @@ class SumPropagator(Propagator):
     def propagate(self, control, changes):
         # manage overwriting
         thought = self.lit_thought[changes[0]]
-
+        self.grid.add(thought[0],thought[1])
 
         # Interrupt Propagation if at least one letter holds true for every field
         if all(all(any(control.assignment.is_true(i) for i in e.values()) for e in d.values()) for d in self.atom_lit.values()):
@@ -198,10 +275,9 @@ class SumPropagator(Propagator):
                         if control.assignment.is_free(lit):
                             control.add_nogood([lit])
             control.propagate()
-
             return
 
-        print(self._print_grid(control.assignment))
+        print(self.grid.get_str())
         if VERBOSE > 0: print("PROPAGATE:")
         if VERBOSE > 1: print(" Previous", changes)
         thoughts = self._get_thoughts(control.assignment)
@@ -209,35 +285,25 @@ class SumPropagator(Propagator):
         # If not done, check whether current state is possible
         if self._check_answers:
             if VERBOSE > 0: print(" LLM Checking State")
-            with open("prompts/propose.txt", "r") as file:
-                template = file.read()
 
             found_impossible = False
             for i,r in enumerate(self.row):
-                question = r + ": " + "".join(self._get_grid(control.assignment)[i])
-                prompt = template.replace("{input}", question)
-                response = chat(model=self._model, messages=[
-                    {
-                        "role" : "user",
-                        "content" : prompt,
-                    }
-                ], options={"num_predict":400})
-                if "impossible" in response["message"]["content"].lower():
+                question = r + ": " + "".join(self.grid.get()[i])
+                if VERBOSE > 2: print("QUESTION", question)
+                answer = self.llm.question(question).lower()
+                if VERBOSE > 2: print("ANSWER", answer)
+                if "impossible" in answer:
                     found_impossible = True
                     break
 
             for i,r in enumerate(self.col):
                 if found_impossible:
                     break
-                question = r + ": " + "".join([row[i] for row in self._get_grid(control.assignment)])
-                prompt = template.replace("{input}", question)
-                response = chat(model=self._model, messages=[
-                    {
-                        "role" : "user",
-                        "content" : prompt,
-                    }
-                ], options={"num_predict":400})
-                if "impossible" in response["message"]["content"].lower():
+                question = r + ": " + "".join([row[i] for row in self.grid.get()])
+                if VERBOSE > 2: print("QUESTION:", question)
+                answer = self.llm.question(question).lower()
+                if VERBOSE > 2: print("ANSWER", answer)
+                if "impossible" in answer:
                     found_impossible = True
 
             if found_impossible:
@@ -271,6 +337,8 @@ class SumPropagator(Propagator):
         if VERBOSE > 0:
             print("UNDO:")
             print(changes)
+        for _ in changes:
+            self.grid.back()
         for c in changes:
             if c in self.lit_thought:
                 del self.lit_thought[c]
@@ -292,7 +360,7 @@ class MiniClingconApp(Application):
         group = 'Tree Search Options'
         options.add(group, 'model', 'Model used for generating search options', self._parse_model, argument="<str>")
         options.add_flag(group, 'duplicates', "Allows duplicate letters", self._duplicates)
-        options.add_flag(group, 'check-answers', "Let the LLM check the possibility of answers", self._check_answers)
+        options.add_flag(group, 'check', "Let the LLM check the possibility of answers", self._check_answers)
 
     def main(self, control, files):
         control.register_propagator(SumPropagator(self._model, self._check_answers.flag))
