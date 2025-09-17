@@ -1,3 +1,3358 @@
 tree version 1.0
-Reading from data/instances/ins_001.lp
+Reading from data/instances/ins_002.lp
 Solving...
+Initial Thoughts:
+ 678 ('h2', 'input', 'certain')
+ 679 ('v2', 'drive', 'high')
+ 680 ('v2', 'force', 'high')
+ 681 ('h0', 'buddy', 'high')
+ 682 ('h3', 'siege', 'high')
+CHECK
+CHECK
+CHECK
+DECIDE:
+678 ('h2', 'input', 'certain')
+_ _ _ _ _ 
+_ _ _ _ _ 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 684 ('v0', 'amish', 'certain')
+ 685 ('h1', 'event', 'medium')
+ 686 ('h1', 'issue', 'medium')
+ 687 ('v1', 'mania', 'low')
+CHECK
+DECIDE:
+684 ('v0', 'amish', 'certain')
+a _ _ _ _ 
+m _ _ _ _ 
+i n p u t 
+s _ _ _ _ 
+h _ _ _ _ 
+
+PROPAGATE:
+ 688 ('h4', 'penny', 'low')
+a _ _ _ _ 
+m _ _ _ _ 
+i n p u t 
+s _ _ _ _ 
+p e n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[684, 688]
+CHECK
+DECIDE:
+685 ('h1', 'event', 'medium')
+_ _ _ _ _ 
+e v e n t 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 689 ('v0', 'amish', 'certain')
+a _ _ _ _ 
+m v e n t 
+i n p u t 
+s _ _ _ _ 
+h _ _ _ _ 
+
+PROPAGATE:
+ 690 ('v1', 'trend', 'low')
+a t _ _ _ 
+m r e n t 
+i e p u t 
+s n _ _ _ 
+h d _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[685, 689, 690]
+CHECK
+DECIDE:
+686 ('h1', 'issue', 'medium')
+_ _ _ _ _ 
+i s s u e 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 691 ('h1', 'event', 'medium')
+ 692 ('v0', 'amish', 'medium')
+CHECK
+DECIDE:
+691 ('h1', 'event', 'medium')
+_ _ _ _ _ 
+e v e n t 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[691]
+a _ _ _ _ 
+m s s u e 
+i n p u t 
+s _ _ _ _ 
+h _ _ _ _ 
+
+PROPAGATE:
+ 693 ('h1', 'event', 'medium')
+a _ _ _ _ 
+e v e n t 
+i n p u t 
+s _ _ _ _ 
+h _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[686, 692, 693]
+_ m _ _ _ 
+_ a _ _ _ 
+i n p u t 
+_ i _ _ _ 
+_ a _ _ _ 
+
+PROPAGATE:
+ 694 ('h1', 'event', 'medium')
+ 695 ('h1', 'thing', 'medium')
+ 696 ('v0', 'amish', 'medium')
+ 697 ('h4', 'penny', 'low')
+CHECK
+DECIDE:
+694 ('h1', 'event', 'medium')
+_ m _ _ _ 
+e v e n t 
+i n p u t 
+_ i _ _ _ 
+_ a _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[694]
+CHECK
+DECIDE:
+695 ('h1', 'thing', 'medium')
+_ m _ _ _ 
+t h i n g 
+i n p u t 
+_ i _ _ _ 
+_ a _ _ _ 
+
+PROPAGATE:
+ 698 ('h1', 'event', 'medium')
+ 699 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+698 ('h1', 'event', 'medium')
+_ m _ _ _ 
+e v e n t 
+i n p u t 
+_ i _ _ _ 
+_ a _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[698]
+_ m _ _ _ 
+i s s u e 
+i n p u t 
+_ i _ _ _ 
+_ a _ _ _ 
+
+PROPAGATE:
+ 700 ('h1', 'event', 'medium')
+_ m _ _ _ 
+e v e n t 
+i n p u t 
+_ i _ _ _ 
+_ a _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[695, 699, 700]
+CHECK
+DECIDE:
+696 ('v0', 'amish', 'medium')
+a m _ _ _ 
+m a _ _ _ 
+i n p u t 
+s i _ _ _ 
+h a _ _ _ 
+
+PROPAGATE:
+ 701 ('h1', 'event', 'medium')
+ 702 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+701 ('h1', 'event', 'medium')
+a m _ _ _ 
+e v e n t 
+i n p u t 
+s i _ _ _ 
+h a _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[701]
+a m _ _ _ 
+i s s u e 
+i n p u t 
+s i _ _ _ 
+h a _ _ _ 
+
+PROPAGATE:
+ 703 ('h1', 'event', 'medium')
+a m _ _ _ 
+e v e n t 
+i n p u t 
+s i _ _ _ 
+h a _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[696, 702, 703]
+_ m _ _ _ 
+_ a _ _ _ 
+i n p u t 
+_ i _ _ _ 
+p e n n y 
+
+PROPAGATE:
+ 704 ('v0', 'amish', 'certain')
+ 705 ('h1', 'event', 'medium')
+ 706 ('h1', 'issue', 'medium')
+ 707 ('v1', 'trend', 'medium')
+CHECK
+DECIDE:
+704 ('v0', 'amish', 'certain')
+a m _ _ _ 
+m a _ _ _ 
+i n p u t 
+s i _ _ _ 
+h e n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[704]
+CHECK
+DECIDE:
+705 ('h1', 'event', 'medium')
+_ m _ _ _ 
+e v e n t 
+i n p u t 
+_ i _ _ _ 
+p e n n y 
+
+PROPAGATE:
+ 708 ('v0', 'amish', 'certain')
+a m _ _ _ 
+m v e n t 
+i n p u t 
+s i _ _ _ 
+h e n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[705, 708]
+CHECK
+DECIDE:
+706 ('h1', 'issue', 'medium')
+_ m _ _ _ 
+i s s u e 
+i n p u t 
+_ i _ _ _ 
+p e n n y 
+
+PROPAGATE:
+ 709 ('h1', 'event', 'medium')
+ 710 ('v0', 'amish', 'medium')
+CHECK
+DECIDE:
+709 ('h1', 'event', 'medium')
+_ m _ _ _ 
+e v e n t 
+i n p u t 
+_ i _ _ _ 
+p e n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[709]
+a m _ _ _ 
+m s s u e 
+i n p u t 
+s i _ _ _ 
+h e n n y 
+
+PROPAGATE:
+ 711 ('h1', 'event', 'medium')
+a m _ _ _ 
+e v e n t 
+i n p u t 
+s i _ _ _ 
+h e n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[706, 710, 711]
+_ t _ _ _ 
+_ r _ _ _ 
+i e p u t 
+_ n _ _ _ 
+p d n n y 
+
+PROPAGATE:
+ 712 ('h1', 'event', 'medium')
+ 713 ('v0', 'amish', 'medium')
+ 714 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+712 ('h1', 'event', 'medium')
+_ t _ _ _ 
+e v e n t 
+i e p u t 
+_ n _ _ _ 
+p d n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[712]
+CHECK
+DECIDE:
+713 ('v0', 'amish', 'medium')
+a t _ _ _ 
+m r _ _ _ 
+i e p u t 
+s n _ _ _ 
+h d n n y 
+
+PROPAGATE:
+ 715 ('h1', 'event', 'medium')
+a t _ _ _ 
+e v e n t 
+i e p u t 
+s n _ _ _ 
+h d n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[713, 715]
+_ t _ _ _ 
+i s s u e 
+i e p u t 
+_ n _ _ _ 
+p d n n y 
+
+PROPAGATE:
+ 716 ('v0', 'amish', 'certain')
+ 717 ('h1', 'event', 'medium')
+CHECK
+DECIDE:
+716 ('v0', 'amish', 'certain')
+a t _ _ _ 
+m s s u e 
+i e p u t 
+s n _ _ _ 
+h d n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[716]
+_ t _ _ _ 
+e v e n t 
+i e p u t 
+_ n _ _ _ 
+p d n n y 
+
+PROPAGATE:
+ 718 ('v0', 'amish', 'certain')
+a t _ _ _ 
+m v e n t 
+i e p u t 
+s n _ _ _ 
+h d n n y 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[678, 687, 697, 707, 714, 717, 718]
+CHECK
+DECIDE:
+679 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 719 ('h2', 'input', 'certain')
+ 720 ('h1', 'event', 'medium')
+ 721 ('v0', 'amish', 'medium')
+ 722 ('h1', 'issue', 'medium')
+ 723 ('h4', 'penny', 'low')
+CHECK
+DECIDE:
+719 ('h2', 'input', 'certain')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[719]
+CHECK
+DECIDE:
+720 ('h1', 'event', 'medium')
+_ _ d _ _ 
+e v e n t 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 724 ('h2', 'input', 'certain')
+ 725 ('v1', 'mania', 'low')
+CHECK
+DECIDE:
+724 ('h2', 'input', 'certain')
+_ _ d _ _ 
+e v e n t 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[724]
+_ m d _ _ 
+e a e n t 
+_ n i _ _ 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 726 ('h2', 'input', 'certain')
+_ m d _ _ 
+e a e n t 
+i n p u t 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[720, 725, 726]
+CHECK
+DECIDE:
+721 ('v0', 'amish', 'medium')
+a _ d _ _ 
+m _ r _ _ 
+i _ i _ _ 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+ 727 ('h2', 'input', 'certain')
+ 728 ('h1', 'event', 'medium')
+ 729 ('v1', 'mania', 'medium')
+CHECK
+DECIDE:
+727 ('h2', 'input', 'certain')
+a _ d _ _ 
+m _ r _ _ 
+i n p u t 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[727]
+CHECK
+DECIDE:
+728 ('h1', 'event', 'medium')
+a _ d _ _ 
+e v e n t 
+i _ i _ _ 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+ 730 ('h2', 'input', 'certain')
+a _ d _ _ 
+e v e n t 
+i n p u t 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[728, 730]
+a m d _ _ 
+m a r _ _ 
+i n i _ _ 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+ 731 ('h2', 'input', 'certain')
+ 732 ('h1', 'event', 'medium')
+CHECK
+DECIDE:
+731 ('h2', 'input', 'certain')
+a m d _ _ 
+m a r _ _ 
+i n p u t 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[731]
+a m d _ _ 
+e v e n t 
+i n i _ _ 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+UNDO:
+[721, 729, 732]
+UNDO:
+[679]
+CHECK
+DECIDE:
+680 ('v2', 'force', 'high')
+_ _ f _ _ 
+_ _ o _ _ 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 733 ('v0', 'amish', 'certain')
+ 734 ('h2', 'input', 'certain')
+ 735 ('v2', 'drive', 'high')
+ 736 ('v1', 'trend', 'medium')
+ 737 ('h1', 'event', 'low')
+CHECK
+DECIDE:
+733 ('v0', 'amish', 'certain')
+a _ f _ _ 
+m _ o _ _ 
+i _ r _ _ 
+s _ c _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+ 738 ('v1', 'mania', 'low')
+a m f _ _ 
+m a o _ _ 
+i n r _ _ 
+s i c _ _ 
+h a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[733, 738]
+CHECK
+DECIDE:
+734 ('h2', 'input', 'certain')
+_ _ f _ _ 
+_ _ o _ _ 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 739 ('v0', 'amish', 'certain')
+ 740 ('v1', 'mania', 'low')
+CHECK
+DECIDE:
+739 ('v0', 'amish', 'certain')
+a _ f _ _ 
+m _ o _ _ 
+i n p u t 
+s _ c _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[739]
+_ m f _ _ 
+_ a o _ _ 
+i n p u t 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 741 ('v0', 'amish', 'low')
+a m f _ _ 
+m a o _ _ 
+i n p u t 
+s i c _ _ 
+h a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[734, 740, 741]
+CHECK
+DECIDE:
+735 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 742 ('h2', 'input', 'certain')
+ 743 ('v0', 'amish', 'certain')
+ 744 ('v1', 'mania', 'low')
+CHECK
+DECIDE:
+742 ('h2', 'input', 'certain')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[742]
+CHECK
+DECIDE:
+743 ('v0', 'amish', 'certain')
+a _ d _ _ 
+m _ r _ _ 
+i _ i _ _ 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+ 745 ('h2', 'input', 'certain')
+a _ d _ _ 
+m _ r _ _ 
+i n p u t 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[743, 745]
+_ m d _ _ 
+_ a r _ _ 
+_ n i _ _ 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 746 ('h2', 'input', 'certain')
+ 747 ('v0', 'amish', 'certain')
+CHECK
+DECIDE:
+746 ('h2', 'input', 'certain')
+_ m d _ _ 
+_ a r _ _ 
+i n p u t 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[746]
+a m d _ _ 
+m a r _ _ 
+i n i _ _ 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+ 748 ('h2', 'input', 'certain')
+ 749 ('v3', 'rough', 'low')
+CHECK
+DECIDE:
+748 ('h2', 'input', 'certain')
+a m d _ _ 
+m a r _ _ 
+i n p u t 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[748]
+a m d r _ 
+m a r o _ 
+i n i u _ 
+s i v g _ 
+h a e h _ 
+
+PROPAGATE:
+ 750 ('h2', 'input', 'certain')
+a m d r _ 
+m a r o _ 
+i n p u t 
+s i v g _ 
+h a e h _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[735, 744, 747, 749, 750]
+CHECK
+DECIDE:
+722 ('h1', 'issue', 'medium')
+_ _ f _ _ 
+i s s u e 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 751 ('h2', 'input', 'certain')
+ 752 ('v2', 'drive', 'high')
+ 753 ('v0', 'amish', 'medium')
+CHECK
+DECIDE:
+751 ('h2', 'input', 'certain')
+_ _ f _ _ 
+i s s u e 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 754 ('v1', 'craze', 'low')
+_ c f _ _ 
+i r s u e 
+i a p u t 
+_ z c _ _ 
+_ e e _ _ 
+
+PROPAGATE:
+ 755 ('v1', 'mania', 'medium')
+_ m f _ _ 
+i a s u e 
+i n p u t 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+UNDO:
+[751, 754, 755]
+UNDO:
+[722]
+UNDO:
+[680]
+CHECK
+DECIDE:
+681 ('h0', 'buddy', 'high')
+b u d d y 
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 756 ('h2', 'input', 'certain')
+ 757 ('v2', 'force', 'high')
+ 758 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+756 ('h2', 'input', 'certain')
+b u d d y 
+_ _ _ _ _ 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[756]
+CHECK
+DECIDE:
+752 ('v2', 'drive', 'high')
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 759 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 760 ('v1', 'mania', 'low')
+b m d d y 
+_ a r _ _ 
+i n p u t 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[752, 759, 760]
+CHECK
+DECIDE:
+757 ('v2', 'force', 'high')
+b u f d y 
+_ _ o _ _ 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 761 ('h2', 'input', 'certain')
+ 762 ('v2', 'drive', 'high')
+ 763 ('v1', 'mania', 'medium')
+CHECK
+DECIDE:
+761 ('h2', 'input', 'certain')
+b u f d y 
+_ _ o _ _ 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[761]
+CHECK
+DECIDE:
+762 ('v2', 'drive', 'high')
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 764 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[762, 764]
+b m f d y 
+_ a o _ _ 
+_ n r _ _ 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 765 ('h2', 'input', 'certain')
+ 766 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+765 ('h2', 'input', 'certain')
+b m f d y 
+_ a o _ _ 
+i n p u t 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[765]
+b m d d y 
+_ a r _ _ 
+_ n i _ _ 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 767 ('h2', 'input', 'certain')
+b m d d y 
+_ a r _ _ 
+i n p u t 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[757, 763, 766, 767]
+b u d d y 
+i s s u e 
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 768 ('h2', 'input', 'certain')
+ 769 ('v2', 'drive', 'high')
+ 770 ('v1', 'mania', 'high')
+ 771 ('v2', 'force', 'high')
+CHECK
+DECIDE:
+768 ('h2', 'input', 'certain')
+b u d d y 
+i s s u e 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[768]
+CHECK
+DECIDE:
+769 ('v2', 'drive', 'high')
+b u d d y 
+i s r u e 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 772 ('h2', 'input', 'certain')
+b u d d y 
+i s r u e 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[769, 772]
+CHECK
+DECIDE:
+770 ('v1', 'mania', 'high')
+b m d d y 
+i a s u e 
+_ n _ _ _ 
+_ i _ _ _ 
+_ a _ _ _ 
+
+PROPAGATE:
+ 773 ('h2', 'input', 'certain')
+ 774 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+773 ('h2', 'input', 'certain')
+b m d d y 
+i a s u e 
+i n p u t 
+_ i _ _ _ 
+_ a _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[773]
+b m d d y 
+i a r u e 
+_ n i _ _ 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 775 ('h2', 'input', 'certain')
+b m d d y 
+i a r u e 
+i n p u t 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[770, 774, 775]
+b u f d y 
+i s o u e 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 776 ('h2', 'input', 'certain')
+ 777 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+776 ('h2', 'input', 'certain')
+b u f d y 
+i s o u e 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 778 ('v1', 'mania', 'low')
+b m f d y 
+i a o u e 
+i n p u t 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[776, 778]
+b u d d y 
+i s r u e 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 779 ('h2', 'input', 'certain')
+ 780 ('v1', 'mania', 'medium')
+CHECK
+DECIDE:
+779 ('h2', 'input', 'certain')
+b u d d y 
+i s r u e 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+UNDO:
+[779]
+UNDO:
+[681, 758, 771, 777]
+CHECK
+DECIDE:
+682 ('h3', 'siege', 'high')
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 781 ('v2', 'force', 'certain')
+ 782 ('h2', 'input', 'high')
+ 783 ('v2', 'drive', 'high')
+ 784 ('h0', 'buddy', 'high')
+ 785 ('h1', 'issue', 'high')
+CHECK
+DECIDE:
+781 ('v2', 'force', 'certain')
+_ _ f _ _ 
+_ _ o _ _ 
+_ _ r _ _ 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[781]
+CHECK
+DECIDE:
+782 ('h2', 'input', 'high')
+_ _ _ _ _ 
+_ _ _ _ _ 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 786 ('v2', 'force', 'high')
+_ _ f _ _ 
+_ _ o _ _ 
+i n r u t 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[782, 786]
+CHECK
+DECIDE:
+783 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 787 ('h2', 'input', 'certain')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[783, 787]
+CHECK
+DECIDE:
+784 ('h0', 'buddy', 'high')
+b u d d y 
+_ _ _ _ _ 
+_ _ _ _ _ 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 788 ('h2', 'input', 'certain')
+ 789 ('h1', 'major', 'certain')
+ 790 ('v2', 'drive', 'high')
+ 791 ('v2', 'force', 'high')
+CHECK
+DECIDE:
+788 ('h2', 'input', 'certain')
+b u d d y 
+_ _ _ _ _ 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[788]
+CHECK
+DECIDE:
+789 ('h1', 'major', 'certain')
+b u d d y 
+m a j o r 
+_ _ _ _ _ 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 792 ('h2', 'input', 'certain')
+b u d d y 
+m a j o r 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[789, 792]
+CHECK
+DECIDE:
+790 ('v2', 'drive', 'high')
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 793 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[790, 793]
+b u f d y 
+_ _ o _ _ 
+_ _ r _ _ 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 794 ('h2', 'input', 'certain')
+ 795 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+794 ('h2', 'input', 'certain')
+b u f d y 
+_ _ o _ _ 
+i n p u t 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[794]
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 796 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[784, 791, 795, 796]
+_ _ _ _ _ 
+i s s u e 
+_ _ _ _ _ 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 797 ('h2', 'input', 'certain')
+ 798 ('v2', 'drive', 'high')
+ 799 ('h0', 'buddy', 'high')
+CHECK
+DECIDE:
+797 ('h2', 'input', 'certain')
+_ _ _ _ _ 
+i s s u e 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 800 ('v2', 'force', 'medium')
+_ _ f _ _ 
+i s o u e 
+i n r u t 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[797, 800]
+CHECK
+DECIDE:
+798 ('v2', 'drive', 'high')
+_ _ d _ _ 
+i s r u e 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 801 ('h2', 'input', 'certain')
+ 802 ('v3', 'rough', 'low')
+CHECK
+DECIDE:
+801 ('h2', 'input', 'certain')
+_ _ d _ _ 
+i s r u e 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 803 ('v2', 'force', 'high')
+_ _ f _ _ 
+i s o u e 
+i n r u t 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[801, 803]
+_ _ d r _ 
+i s r o e 
+_ _ i u _ 
+s i v g e 
+_ _ e h _ 
+
+PROPAGATE:
+ 804 ('h2', 'input', 'certain')
+ 805 ('v2', 'force', 'high')
+CHECK
+DECIDE:
+804 ('h2', 'input', 'certain')
+_ _ d r _ 
+i s r o e 
+i n p u t 
+s i v g e 
+_ _ e h _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[804]
+_ _ f r _ 
+i s o o e 
+_ _ r u _ 
+s i c g e 
+_ _ e h _ 
+
+PROPAGATE:
+ 806 ('h2', 'input', 'certain')
+_ _ f r _ 
+i s o o e 
+i n p u t 
+s i c g e 
+_ _ e h _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[798, 802, 805, 806]
+b u d d y 
+i s s u e 
+_ _ _ _ _ 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 807 ('h2', 'input', 'certain')
+ 808 ('v2', 'drive', 'high')
+ 809 ('v2', 'force', 'high')
+CHECK
+DECIDE:
+807 ('h2', 'input', 'certain')
+b u d d y 
+i s s u e 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[807]
+CHECK
+DECIDE:
+808 ('v2', 'drive', 'high')
+b u d d y 
+i s r u e 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 810 ('h2', 'input', 'certain')
+b u d d y 
+i s r u e 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[808, 810]
+b u f d y 
+i s o u e 
+_ _ r _ _ 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 811 ('h2', 'input', 'certain')
+ 812 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+811 ('h2', 'input', 'certain')
+b u f d y 
+i s o u e 
+i n p u t 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[811]
+b u d d y 
+i s r u e 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 813 ('h2', 'input', 'certain')
+b u d d y 
+i s r u e 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[682, 785, 799, 809, 812, 813]
+CHECK
+DECIDE:
+736 ('v1', 'trend', 'medium')
+_ t _ _ _ 
+_ r _ _ _ 
+_ e _ _ _ 
+_ n _ _ _ 
+_ d _ _ _ 
+
+PROPAGATE:
+ 814 ('h2', 'input', 'certain')
+ 815 ('v2', 'drive', 'high')
+ 816 ('h0', 'buddy', 'high')
+ 817 ('h3', 'siege', 'high')
+ 818 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+814 ('h2', 'input', 'certain')
+_ t _ _ _ 
+_ r _ _ _ 
+i n p u t 
+_ n _ _ _ 
+_ d _ _ _ 
+
+PROPAGATE:
+ 819 ('v2', 'force', 'high')
+_ t f _ _ 
+_ r o _ _ 
+i n r u t 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[814, 819]
+CHECK
+DECIDE:
+815 ('v2', 'drive', 'high')
+_ t d _ _ 
+_ r r _ _ 
+_ e i _ _ 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+ 820 ('v2', 'force', 'medium')
+_ t f _ _ 
+_ r o _ _ 
+_ e r _ _ 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+ 821 ('h2', 'input', 'certain')
+_ t f _ _ 
+_ r o _ _ 
+i n p u t 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[815, 820, 821]
+CHECK
+DECIDE:
+816 ('h0', 'buddy', 'high')
+b u d d y 
+_ r _ _ _ 
+_ e _ _ _ 
+_ n _ _ _ 
+_ d _ _ _ 
+
+PROPAGATE:
+ 822 ('h2', 'input', 'certain')
+ 823 ('v2', 'drive', 'high')
+ 824 ('v2', 'force', 'high')
+CHECK
+DECIDE:
+822 ('h2', 'input', 'certain')
+b u d d y 
+_ r _ _ _ 
+i n p u t 
+_ n _ _ _ 
+_ d _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[822]
+CHECK
+DECIDE:
+823 ('v2', 'drive', 'high')
+b u d d y 
+_ r r _ _ 
+_ e i _ _ 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+ 825 ('h2', 'input', 'certain')
+b u d d y 
+_ r r _ _ 
+i n p u t 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[823, 825]
+b u f d y 
+_ r o _ _ 
+_ e r _ _ 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+ 826 ('h2', 'input', 'certain')
+ 827 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+826 ('h2', 'input', 'certain')
+b u f d y 
+_ r o _ _ 
+i n p u t 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[826]
+b u d d y 
+_ r r _ _ 
+_ e i _ _ 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+ 828 ('h2', 'input', 'certain')
+b u d d y 
+_ r r _ _ 
+i n p u t 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[816, 824, 827, 828]
+CHECK
+DECIDE:
+817 ('h3', 'siege', 'high')
+_ t _ _ _ 
+_ r _ _ _ 
+_ e _ _ _ 
+s i e g e 
+_ d _ _ _ 
+
+PROPAGATE:
+ 829 ('h2', 'input', 'certain')
+ 830 ('v2', 'drive', 'high')
+ 831 ('h0', 'buddy', 'high')
+ 832 ('v2', 'force', 'high')
+CHECK
+DECIDE:
+829 ('h2', 'input', 'certain')
+_ t _ _ _ 
+_ r _ _ _ 
+i n p u t 
+s i e g e 
+_ d _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[829]
+CHECK
+DECIDE:
+830 ('v2', 'drive', 'high')
+_ t d _ _ 
+_ r r _ _ 
+_ e i _ _ 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 833 ('h2', 'input', 'certain')
+_ t d _ _ 
+_ r r _ _ 
+i n p u t 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[830, 833]
+CHECK
+DECIDE:
+831 ('h0', 'buddy', 'high')
+b u d d y 
+_ r _ _ _ 
+_ e _ _ _ 
+s i e g e 
+_ d _ _ _ 
+
+PROPAGATE:
+ 834 ('h2', 'input', 'certain')
+ 835 ('v2', 'drive', 'high')
+ 836 ('v1', 'craze', 'high')
+CHECK
+DECIDE:
+834 ('h2', 'input', 'certain')
+b u d d y 
+_ r _ _ _ 
+i n p u t 
+s i e g e 
+_ d _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[834]
+CHECK
+DECIDE:
+835 ('v2', 'drive', 'high')
+b u d d y 
+_ r r _ _ 
+_ e i _ _ 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 837 ('h2', 'input', 'certain')
+b u d d y 
+_ r r _ _ 
+i n p u t 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[835, 837]
+b c d d y 
+_ r _ _ _ 
+_ a _ _ _ 
+s z e g e 
+_ e _ _ _ 
+
+PROPAGATE:
+ 838 ('h2', 'input', 'certain')
+ 839 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+838 ('h2', 'input', 'certain')
+b c d d y 
+_ r _ _ _ 
+i n p u t 
+s z e g e 
+_ e _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[838]
+b c d d y 
+_ r r _ _ 
+_ a i _ _ 
+s z v g e 
+_ e e _ _ 
+
+PROPAGATE:
+ 840 ('h2', 'input', 'certain')
+b c d d y 
+_ r r _ _ 
+i n p u t 
+s z v g e 
+_ e e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[831, 836, 839, 840]
+_ t f _ _ 
+_ r o _ _ 
+_ e r _ _ 
+s i c g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 841 ('h2', 'input', 'certain')
+ 842 ('h0', 'buddy', 'high')
+ 843 ('v2', 'drive', 'medium')
+CHECK
+DECIDE:
+841 ('h2', 'input', 'certain')
+_ t f _ _ 
+_ r o _ _ 
+i n p u t 
+s i c g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[841]
+CHECK
+DECIDE:
+842 ('h0', 'buddy', 'high')
+b u d d y 
+_ r o _ _ 
+_ e r _ _ 
+s i c g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 844 ('h2', 'input', 'certain')
+b u d d y 
+_ r o _ _ 
+i n p u t 
+s i c g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[842, 844]
+_ t d _ _ 
+_ r r _ _ 
+_ e i _ _ 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 845 ('h2', 'input', 'certain')
+ 846 ('h0', 'buddy', 'high')
+CHECK
+DECIDE:
+845 ('h2', 'input', 'certain')
+_ t d _ _ 
+_ r r _ _ 
+i n p u t 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[845]
+b u d d y 
+_ r r _ _ 
+_ e i _ _ 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 847 ('h2', 'input', 'certain')
+b u d d y 
+_ r r _ _ 
+i n p u t 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[817, 832, 843, 846, 847]
+_ t _ _ _ 
+i s s u e 
+_ e _ _ _ 
+_ n _ _ _ 
+_ d _ _ _ 
+
+PROPAGATE:
+ 848 ('h3', 'siege', 'certain')
+ 849 ('h2', 'input', 'certain')
+ 850 ('v2', 'drive', 'high')
+ 851 ('v2', 'force', 'high')
+ 852 ('h0', 'buddy', 'high')
+CHECK
+DECIDE:
+848 ('h3', 'siege', 'certain')
+_ t _ _ _ 
+i s s u e 
+_ e _ _ _ 
+s i e g e 
+_ d _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[848]
+CHECK
+DECIDE:
+849 ('h2', 'input', 'certain')
+_ t _ _ _ 
+i s s u e 
+i n p u t 
+_ n _ _ _ 
+_ d _ _ _ 
+
+PROPAGATE:
+ 853 ('h3', 'siege', 'high')
+_ t _ _ _ 
+i s s u e 
+i n p u t 
+s i e g e 
+_ d _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[849, 853]
+CHECK
+DECIDE:
+850 ('v2', 'drive', 'high')
+_ t d _ _ 
+i s r u e 
+_ e i _ _ 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+ 854 ('h2', 'input', 'certain')
+ 855 ('h3', 'siege', 'high')
+CHECK
+DECIDE:
+854 ('h2', 'input', 'certain')
+_ t d _ _ 
+i s r u e 
+i n p u t 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[854]
+_ t d _ _ 
+i s r u e 
+_ e i _ _ 
+s i e g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 856 ('h2', 'input', 'certain')
+_ t d _ _ 
+i s r u e 
+i n p u t 
+s i e g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[850, 855, 856]
+CHECK
+DECIDE:
+851 ('v2', 'force', 'high')
+_ t f _ _ 
+i s o u e 
+_ e r _ _ 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+ 857 ('h2', 'input', 'certain')
+ 858 ('v2', 'drive', 'high')
+ 859 ('h3', 'siege', 'high')
+CHECK
+DECIDE:
+857 ('h2', 'input', 'certain')
+_ t f _ _ 
+i s o u e 
+i n p u t 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[857]
+CHECK
+DECIDE:
+858 ('v2', 'drive', 'high')
+_ t d _ _ 
+i s r u e 
+_ e i _ _ 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+ 860 ('h2', 'input', 'certain')
+_ t d _ _ 
+i s r u e 
+i n p u t 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[858, 860]
+_ t f _ _ 
+i s o u e 
+_ e r _ _ 
+s i e g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 861 ('h2', 'input', 'certain')
+ 862 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+861 ('h2', 'input', 'certain')
+_ t f _ _ 
+i s o u e 
+i n p u t 
+s i e g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[861]
+_ t d _ _ 
+i s r u e 
+_ e i _ _ 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+ 863 ('h2', 'input', 'certain')
+_ t d _ _ 
+i s r u e 
+i n p u t 
+s i v g e 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[851, 859, 862, 863]
+b u d d y 
+i s s u e 
+_ e _ _ _ 
+_ n _ _ _ 
+_ d _ _ _ 
+
+PROPAGATE:
+ 864 ('v2', 'force', 'certain')
+ 865 ('h2', 'input', 'high')
+ 866 ('v2', 'drive', 'high')
+ 867 ('h3', 'siege', 'high')
+ 868 ('h2', 'entry', 'medium')
+CHECK
+DECIDE:
+864 ('v2', 'force', 'certain')
+b u f d y 
+i s o u e 
+_ e r _ _ 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[864]
+CHECK
+DECIDE:
+865 ('h2', 'input', 'high')
+b u d d y 
+i s s u e 
+i n p u t 
+_ n _ _ _ 
+_ d _ _ _ 
+
+PROPAGATE:
+ 869 ('v2', 'force', 'high')
+b u f d y 
+i s o u e 
+i n r u t 
+_ n c _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+UNDO:
+[865, 869]
+UNDO:
+[736, 818, 852]
+CHECK
+DECIDE:
+866 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 870 ('h2', 'input', 'certain')
+ 871 ('h0', 'buddy', 'high')
+ 872 ('v2', 'force', 'medium')
+ 873 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+870 ('h2', 'input', 'certain')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[870]
+CHECK
+DECIDE:
+871 ('h0', 'buddy', 'high')
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 874 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[871, 874]
+CHECK
+DECIDE:
+753 ('v0', 'amish', 'medium')
+a _ d _ _ 
+m _ r _ _ 
+i _ i _ _ 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+ 875 ('h2', 'input', 'certain')
+ 876 ('h0', 'buddy', 'high')
+CHECK
+DECIDE:
+875 ('h2', 'input', 'certain')
+a _ d _ _ 
+m _ r _ _ 
+i n p u t 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[875]
+b u d d y 
+m _ r _ _ 
+i _ i _ _ 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+ 877 ('h2', 'input', 'certain')
+b u d d y 
+m _ r _ _ 
+i n p u t 
+s _ v _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[753, 876, 877]
+CHECK
+DECIDE:
+780 ('v1', 'mania', 'medium')
+_ m d _ _ 
+_ a r _ _ 
+_ n i _ _ 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 878 ('h2', 'input', 'certain')
+ 879 ('v0', 'amish', 'certain')
+ 880 ('h0', 'buddy', 'high')
+CHECK
+DECIDE:
+878 ('h2', 'input', 'certain')
+_ m d _ _ 
+_ a r _ _ 
+i n p u t 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[878]
+CHECK
+DECIDE:
+879 ('v0', 'amish', 'certain')
+a m d _ _ 
+m a r _ _ 
+i n i _ _ 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+ 881 ('h1', 'major', 'high')
+a m d _ _ 
+m a j o r 
+i n i _ _ 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+ 882 ('h2', 'input', 'certain')
+a m d _ _ 
+m a j o r 
+i n p u t 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[879, 881, 882]
+b u d d y 
+_ a r _ _ 
+_ n i _ _ 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 883 ('h2', 'input', 'certain')
+ 884 ('v0', 'amish', 'certain')
+CHECK
+DECIDE:
+883 ('h2', 'input', 'certain')
+b u d d y 
+_ a r _ _ 
+i n p u t 
+_ i v _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[883]
+a u d d y 
+m a r _ _ 
+i n i _ _ 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+ 885 ('h2', 'input', 'certain')
+a u d d y 
+m a r _ _ 
+i n p u t 
+s i v _ _ 
+h a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[780, 880, 884, 885]
+CHECK
+DECIDE:
+872 ('v2', 'force', 'medium')
+_ _ f _ _ 
+_ _ o _ _ 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 886 ('h2', 'input', 'certain')
+ 887 ('v0', 'amish', 'certain')
+ 888 ('h0', 'buddy', 'high')
+ 889 ('v1', 'mania', 'medium')
+CHECK
+DECIDE:
+886 ('h2', 'input', 'certain')
+_ _ f _ _ 
+_ _ o _ _ 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[886]
+CHECK
+DECIDE:
+887 ('v0', 'amish', 'certain')
+a _ f _ _ 
+m _ o _ _ 
+i _ r _ _ 
+s _ c _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+ 890 ('h2', 'input', 'high')
+a _ f _ _ 
+m _ o _ _ 
+i n p u t 
+s _ c _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[887, 890]
+CHECK
+DECIDE:
+888 ('h0', 'buddy', 'high')
+b u d d y 
+_ _ o _ _ 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 891 ('h2', 'input', 'certain')
+ 892 ('v0', 'amish', 'medium')
+CHECK
+DECIDE:
+891 ('h2', 'input', 'certain')
+b u d d y 
+_ _ o _ _ 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[891]
+a u d d y 
+m _ o _ _ 
+i _ r _ _ 
+s _ c _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+ 893 ('h2', 'input', 'certain')
+a u d d y 
+m _ o _ _ 
+i n p u t 
+s _ c _ _ 
+h _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[888, 892, 893]
+_ m f _ _ 
+_ a o _ _ 
+_ n r _ _ 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 894 ('h2', 'input', 'certain')
+ 895 ('h0', 'buddy', 'high')
+ 896 ('v0', 'amish', 'medium')
+CHECK
+DECIDE:
+894 ('h2', 'input', 'certain')
+_ m f _ _ 
+_ a o _ _ 
+i n p u t 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[894]
+CHECK
+DECIDE:
+895 ('h0', 'buddy', 'high')
+b u d d y 
+_ a o _ _ 
+_ n r _ _ 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+ 897 ('h2', 'input', 'certain')
+b u d d y 
+_ a o _ _ 
+i n p u t 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[895, 897]
+a m f _ _ 
+m a o _ _ 
+i n r _ _ 
+s i c _ _ 
+h a e _ _ 
+
+PROPAGATE:
+ 898 ('h2', 'input', 'certain')
+ 899 ('h0', 'buddy', 'high')
+CHECK
+DECIDE:
+898 ('h2', 'input', 'certain')
+a m f _ _ 
+m a o _ _ 
+i n p u t 
+s i c _ _ 
+h a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[898]
+b u d d y 
+m a o _ _ 
+i n r _ _ 
+s i c _ _ 
+h a e _ _ 
+
+PROPAGATE:
+ 900 ('h2', 'input', 'certain')
+b u d d y 
+m a o _ _ 
+i n p u t 
+s i c _ _ 
+h a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[872, 889, 896, 899, 900]
+_ _ d _ _ 
+i s s u e 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 901 ('h2', 'input', 'certain')
+ 902 ('h0', 'buddy', 'high')
+ 903 ('v0', 'amish', 'medium')
+CHECK
+DECIDE:
+901 ('h2', 'input', 'certain')
+_ _ d _ _ 
+i s s u e 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 904 ('v2', 'force', 'high')
+_ _ f _ _ 
+i s o u e 
+i n r u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 905 ('v1', 'mania', 'low')
+_ m f _ _ 
+i a o u e 
+i n r u t 
+_ i c _ _ 
+_ a e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[901, 904, 905]
+CHECK
+DECIDE:
+902 ('h0', 'buddy', 'high')
+b u d d y 
+i s s u e 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 906 ('h2', 'input', 'certain')
+b u d d y 
+i s s u e 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 907 ('v2', 'force', 'high')
+b u f d y 
+i s o u e 
+i n r u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+UNDO:
+[902, 906, 907]
+UNDO:
+[866, 873]
+CHECK
+DECIDE:
+867 ('h3', 'siege', 'high')
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 908 ('h2', 'input', 'certain')
+ 909 ('v2', 'drive', 'high')
+ 910 ('v2', 'force', 'high')
+ 911 ('h0', 'buddy', 'high')
+ 912 ('v1', 'mania', 'medium')
+CHECK
+DECIDE:
+908 ('h2', 'input', 'certain')
+_ _ _ _ _ 
+_ _ _ _ _ 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 913 ('h1', 'issue', 'medium')
+_ _ _ _ _ 
+i s s u e 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[908, 913]
+CHECK
+DECIDE:
+909 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 914 ('h2', 'input', 'certain')
+ 915 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+914 ('h2', 'input', 'certain')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[914]
+_ _ d _ _ 
+i s s u e 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 916 ('h2', 'input', 'certain')
+_ _ d _ _ 
+i s s u e 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[909, 915, 916]
+CHECK
+DECIDE:
+910 ('v2', 'force', 'high')
+_ _ f _ _ 
+_ _ o _ _ 
+_ _ r _ _ 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 917 ('h2', 'input', 'certain')
+ 918 ('v2', 'drive', 'high')
+ 919 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+917 ('h2', 'input', 'certain')
+_ _ f _ _ 
+_ _ o _ _ 
+i n p u t 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[917]
+CHECK
+DECIDE:
+918 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 920 ('h2', 'input', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[918, 920]
+_ _ f _ _ 
+i s s u e 
+_ _ r _ _ 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 921 ('h2', 'input', 'certain')
+ 922 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+921 ('h2', 'input', 'certain')
+_ _ f _ _ 
+i s s u e 
+i n p u t 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[921]
+_ _ d _ _ 
+i s r u e 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+UNDO:
+[910, 919, 922]
+UNDO:
+[867]
+CHECK
+DECIDE:
+911 ('h0', 'buddy', 'high')
+b u d d y 
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 923 ('h2', 'input', 'certain')
+ 924 ('v2', 'drive', 'high')
+ 925 ('h3', 'siege', 'high')
+ 926 ('h1', 'issue', 'high')
+ 927 ('v2', 'force', 'medium')
+CHECK
+DECIDE:
+923 ('h2', 'input', 'certain')
+b u d d y 
+_ _ _ _ _ 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[923]
+CHECK
+DECIDE:
+924 ('v2', 'drive', 'high')
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 928 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[924, 928]
+CHECK
+DECIDE:
+925 ('h3', 'siege', 'high')
+b u d d y 
+_ _ _ _ _ 
+_ _ _ _ _ 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 929 ('h2', 'input', 'certain')
+ 930 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+929 ('h2', 'input', 'certain')
+b u d d y 
+_ _ _ _ _ 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[929]
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 931 ('h2', 'input', 'certain')
+ 932 ('h1', 'magic', 'low')
+CHECK
+DECIDE:
+931 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[931]
+b u d d y 
+m a g i c 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 933 ('h2', 'input', 'certain')
+b u d d y 
+m a g i c 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[925, 930, 932, 933]
+CHECK
+DECIDE:
+926 ('h1', 'issue', 'high')
+b u d d y 
+i s s u e 
+_ _ _ _ _ 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 934 ('h2', 'input', 'certain')
+ 935 ('h3', 'siege', 'high')
+ 936 ('v2', 'drive', 'low')
+CHECK
+DECIDE:
+934 ('h2', 'input', 'certain')
+b u d d y 
+i s s u e 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[934]
+CHECK
+DECIDE:
+935 ('h3', 'siege', 'high')
+b u d d y 
+i s s u e 
+_ _ _ _ _ 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 937 ('h2', 'input', 'certain')
+b u d d y 
+i s s u e 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[935, 937]
+b u d d y 
+i s r u e 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 938 ('h3', 'siege', 'high')
+b u d d y 
+i s r u e 
+_ _ i _ _ 
+s i e g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 939 ('h2', 'input', 'certain')
+b u d d y 
+i s r u e 
+i n p u t 
+s i e g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[926, 936, 938, 939]
+b u f d y 
+_ _ o _ _ 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 940 ('h2', 'input', 'certain')
+ 941 ('v2', 'drive', 'high')
+ 942 ('h1', 'major', 'high')
+ 943 ('h3', 'siege', 'high')
+CHECK
+DECIDE:
+940 ('h2', 'input', 'certain')
+b u f d y 
+_ _ o _ _ 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[940]
+CHECK
+DECIDE:
+941 ('v2', 'drive', 'high')
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 944 ('h2', 'input', 'certain')
+ 945 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+944 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[944]
+b u d d y 
+i s s u e 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 946 ('h2', 'input', 'certain')
+b u d d y 
+i s s u e 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[941, 945, 946]
+CHECK
+DECIDE:
+942 ('h1', 'major', 'high')
+b u f d y 
+m a j o r 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 947 ('h2', 'input', 'certain')
+ 948 ('v2', 'drive', 'high')
+ 949 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+947 ('h2', 'input', 'certain')
+b u f d y 
+m a j o r 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[947]
+CHECK
+DECIDE:
+948 ('v2', 'drive', 'high')
+b u d d y 
+m a r o r 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 950 ('h2', 'input', 'certain')
+ 951 ('v1', 'trend', 'medium')
+CHECK
+DECIDE:
+950 ('h2', 'input', 'certain')
+b u d d y 
+m a r o r 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[950]
+b t d d y 
+m r r o r 
+_ e i _ _ 
+_ n v _ _ 
+_ d e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[948, 951]
+b u f d y 
+i s s u e 
+_ _ r _ _ 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 952 ('h2', 'input', 'certain')
+ 953 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+952 ('h2', 'input', 'certain')
+b u f d y 
+i s s u e 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[952]
+b u d d y 
+i s r u e 
+_ _ i _ _ 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[942, 949, 953]
+b u f d y 
+_ _ o _ _ 
+_ _ r _ _ 
+s i e g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 954 ('h2', 'input', 'certain')
+ 955 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+954 ('h2', 'input', 'certain')
+b u f d y 
+_ _ o _ _ 
+i n p u t 
+s i e g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 956 ('h1', 'issue', 'medium')
+b u f d y 
+i s s u e 
+i n p u t 
+s i e g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[954, 956]
+b u d d y 
+_ _ r _ _ 
+_ _ i _ _ 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 957 ('h2', 'input', 'certain')
+ 958 ('h1', 'issue', 'medium')
+CHECK
+DECIDE:
+957 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+UNDO:
+[957]
+UNDO:
+[911, 927, 943, 955]
+CHECK
+DECIDE:
+868 ('h2', 'entry', 'medium')
+_ _ _ _ _ 
+_ _ _ _ _ 
+e n t r y 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 959 ('h2', 'input', 'high')
+ 960 ('v2', 'drive', 'high')
+ 961 ('v2', 'force', 'high')
+ 962 ('h0', 'buddy', 'high')
+ 963 ('h3', 'siege', 'high')
+CHECK
+DECIDE:
+959 ('h2', 'input', 'high')
+_ _ _ _ _ 
+_ _ _ _ _ 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[959]
+CHECK
+DECIDE:
+960 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+e n i r y 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 964 ('h2', 'input', 'certain')
+ 965 ('v1', 'craze', 'low')
+CHECK
+DECIDE:
+964 ('h2', 'input', 'certain')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[964]
+_ c d _ _ 
+_ r r _ _ 
+e a i r y 
+_ z v _ _ 
+_ e e _ _ 
+
+PROPAGATE:
+ 966 ('h2', 'input', 'certain')
+_ c d _ _ 
+_ r r _ _ 
+i n p u t 
+_ z v _ _ 
+_ e e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[960, 965, 966]
+CHECK
+DECIDE:
+961 ('v2', 'force', 'high')
+_ _ f _ _ 
+_ _ o _ _ 
+e n r r y 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 967 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+e n i r y 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 968 ('h2', 'input', 'certain')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[961, 967, 968]
+CHECK
+DECIDE:
+962 ('h0', 'buddy', 'high')
+b u d d y 
+_ _ _ _ _ 
+e n t r y 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 969 ('h2', 'input', 'certain')
+ 970 ('v2', 'drive', 'high')
+ 971 ('v2', 'force', 'high')
+CHECK
+DECIDE:
+969 ('h2', 'input', 'certain')
+b u d d y 
+_ _ _ _ _ 
+i n p u t 
+_ _ _ _ _ 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[969]
+CHECK
+DECIDE:
+970 ('v2', 'drive', 'high')
+b u d d y 
+_ _ r _ _ 
+e n i r y 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 972 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[970, 972]
+b u f d y 
+_ _ o _ _ 
+e n r r y 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 973 ('v2', 'drive', 'certain')
+ 974 ('h2', 'input', 'high')
+CHECK
+DECIDE:
+973 ('v2', 'drive', 'certain')
+b u d d y 
+_ _ r _ _ 
+e n i r y 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[973]
+b u f d y 
+_ _ o _ _ 
+i n p u t 
+_ _ c _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+ 975 ('v2', 'drive', 'medium')
+b u d d y 
+_ _ r _ _ 
+i n i u t 
+_ _ v _ _ 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[962, 971, 974, 975]
+_ _ _ _ _ 
+_ _ _ _ _ 
+e n t r y 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 976 ('h2', 'input', 'certain')
+ 977 ('v2', 'drive', 'high')
+ 978 ('h0', 'buddy', 'high')
+ 979 ('v2', 'force', 'high')
+CHECK
+DECIDE:
+976 ('h2', 'input', 'certain')
+_ _ _ _ _ 
+_ _ _ _ _ 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[976]
+CHECK
+DECIDE:
+977 ('v2', 'drive', 'high')
+_ _ d _ _ 
+_ _ r _ _ 
+e n i r y 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 980 ('h2', 'input', 'certain')
+_ _ d _ _ 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[977, 980]
+CHECK
+DECIDE:
+978 ('h0', 'buddy', 'high')
+b u d d y 
+_ _ _ _ _ 
+e n t r y 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+ 981 ('h2', 'input', 'certain')
+ 982 ('v2', 'drive', 'high')
+CHECK
+DECIDE:
+981 ('h2', 'input', 'certain')
+b u d d y 
+_ _ _ _ _ 
+i n p u t 
+s i e g e 
+_ _ _ _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[981]
+b u d d y 
+_ _ r _ _ 
+e n i r y 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 983 ('h2', 'input', 'certain')
+ 984 ('h1', 'magic', 'medium')
+CHECK
+DECIDE:
+983 ('h2', 'input', 'certain')
+b u d d y 
+_ _ r _ _ 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.UNKNOWN
+
+INTERRUPTED  : 1
+Models       : 0+
+Calls        : 1
+Time         : 25886.048s (Solving: 25825.69s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.390s
+
+UNDO:
+[983]
+b u d d y 
+m a g i c 
+e n i r y 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 985 ('h2', 'input', 'certain')
+b u d d y 
+m a g i c 
+i n p u t 
+s i v g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[978, 982, 984, 985]
+_ _ f _ _ 
+_ _ o _ _ 
+e n r r y 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+ 986 ('h2', 'input', 'certain')
+ 987 ('h0', 'buddy', 'high')
+ 988 ('v2', 'drive', 'medium')
+CHECK
+DECIDE:
+986 ('h2', 'input', 'certain')
+_ _ f _ _ 
+_ _ o _ _ 
+i n p u t 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+No more thoughts.
+UNDO:
+[986]
+CHECK
+DECIDE:
+987 ('h0', 'buddy', 'high')
+b u d d y 
+_ _ o _ _ 
+e n r r y 
+s i c g e 
+_ _ e _ _ 
+
+PROPAGATE:
+UNDO:
+[987]
+UNDO:
+[868, 963, 979]

@@ -12,8 +12,8 @@ from prompts import evaluate
 
 from ollama import chat
 
-VERBOSE = 1
-SAMPLING = 1
+VERBOSE = 2
+SAMPLING = 2
 BREADTH = 5
 
 class Grid():
@@ -46,15 +46,19 @@ class Grid():
 
         self.current += 1
         self.states[self.current] = copy.deepcopy(self.current_grid)
+        return True
 
     def back(self):
         """
         Reverts to the previous state.
         """
+        if self.current == 0:
+            return False
 
         self.states.pop(self.current)
         self.current -= 1
         self.current_grid = copy.deepcopy(self.states[self.current])
+        return True
 
     def get(self):
         """
@@ -131,6 +135,9 @@ class SumPropagator(Propagator):
         # Initialize the LLM wrapper for easier calling
         self.llm = LocalLLM(model)
 
+        # Used to supress some outputs when the run is done.
+        self.done = False
+
     def _get_thoughts(self, assignment):
         # Generate Input
         state = ""
@@ -189,7 +196,9 @@ class SumPropagator(Propagator):
                         possible = False
 
             # Only append things which are possible
-            if possible and not any(candidate[0:2] == value[0:2] for value in self.lit_thought.values()):
+            # if possible and not any(candidate[0:1] == value[0:1] for value in self.lit_thought.values()):
+            if possible and not any((candidate[0:1] == self.lit_thought[lit][0:1] and assignment.is_true(lit)) for lit in self.lit_thought):
+            # if possible:
                 tuples_list.add(candidate)
 
         # Sort them by their assigned probability
@@ -222,9 +231,10 @@ class SumPropagator(Propagator):
         # One of those literals must hold if the previous holds
         control.add_clause(lits+list(map(lambda x: -x, changes)))
 
-        # Make sure only one is picked by adding all pairs as nogoods
-        for pair in itertools.combinations(list(map(lambda x: -x,lits)),2):
-            control.add_clause(list(pair))
+        # # Make sure only one is picked by adding all pairs as nogoods
+        # # Deactivating this should lead to general thought pooling
+        # for pair in itertools.combinations(list(map(lambda x: -x,lits)),2):
+        #     control.add_clause(list(pair))
 
     def init(self, init):
         for i in init.symbolic_atoms:
@@ -248,17 +258,18 @@ class SumPropagator(Propagator):
         self.thought_structure(init)
 
     def decide(self, thread_id, assignment, fallback):
-        if VERBOSE > 0: print("DECIDE:")
         choosen = min(
             (lit for lit in self.lit_thought if assignment.is_free(lit)),
             key=lambda lit: self.ranking_order[self.lit_thought[lit][2]],
             default=None)
 
         if choosen:
+            if VERBOSE > 0: print("DECIDE:")
             if VERBOSE > 0: print(choosen, self.lit_thought[choosen])
             return choosen
         else:
-            os._exit(1)
+            # Set everything else to false
+            return -abs(fallback)
 
     def propagate(self, control, changes):
         # manage overwriting
@@ -268,13 +279,7 @@ class SumPropagator(Propagator):
         # Interrupt Propagation if at least one letter holds true for every field
         if all(all(any(control.assignment.is_true(i) for i in e.values()) for e in d.values()) for d in self.atom_lit.values()):
             if VERBOSE > 0: print("Done")
-            # Set all other assignables to False
-            for row in self.atom_lit.values():
-                for col in row.values():
-                    for lit in col.values():
-                        if control.assignment.is_free(lit):
-                            control.add_nogood([lit])
-            control.propagate()
+            self.done = True
             return
 
         print(self.grid.get_str())
@@ -309,6 +314,7 @@ class SumPropagator(Propagator):
             if found_impossible:
                 if VERBOSE > 0: print(" Impossible")
                 control.add_nogood([lit for lit in self.lit_thought if control.assignment.is_true(lit)])
+                control.propagate()
                 return
 
         # If there are no more thoughts to pick, the current state is illegal
@@ -325,23 +331,24 @@ class SumPropagator(Propagator):
     def check(self, control):
         # Interrupt checking if at least one letter holds true for every field
         if all(all(any(control.assignment.is_true(i) for i in e.values()) for e in d.values()) for d in self.atom_lit.values()):
-            if VERBOSE > 0: print("Done")
             return
 
         if VERBOSE > 0: print("CHECK")
         if not any(control.assignment.is_free(lit) for lit in self.lit_thought):
             if VERBOSE > 1: print(" No thoughts!")
             control.add_nogood([lit for lit in self.lit_thought if control.assignment.is_true(lit)])
+            control.propagate()
 
     def undo(self, thread_id, assignment, changes):
-        if VERBOSE > 0:
-            print("UNDO:")
-            print(changes)
-        for _ in changes:
-            self.grid.back()
-        for c in changes:
-            if c in self.lit_thought:
-                del self.lit_thought[c]
+        if not self.done:
+            if VERBOSE > 0:
+                print("UNDO:")
+                print(changes)
+            for _ in changes:
+                self.grid.back()
+            for c in changes:
+                if c in self.lit_thought:
+                    del self.lit_thought[c]
 
 class MiniClingconApp(Application):
     program_name = "tree"
