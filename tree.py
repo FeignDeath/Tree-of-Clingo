@@ -12,9 +12,9 @@ from prompts import evaluate
 
 from ollama import chat
 
-VERBOSE = 2
+VERBOSE = 1
 SAMPLING = 2
-BREADTH = 5
+BREADTH = 100
 
 class Grid():
     def __init__(self):
@@ -149,11 +149,14 @@ class SumPropagator(Propagator):
         for i,c in enumerate(self.col):
             situation = "".join([row[i] for row in self.grid.get()])
             state += f"v{i}. {c}, state={situation}\n"
+        
+        state += "\n" + self.grid.get_str()
+        if VERBOSE > 2: print(" Situation:", state)
 
         output = ""
         for _ in range(SAMPLING):
             output += self.llm.think(state)
-        if VERBOSE > 2: print(output)
+        if VERBOSE > 2: print(" Thoughts:", output)
 
         # Regular expression pattern to find all expresions of the for "h1 words high"
         pattern1 = r"[hv][0-4]\S\s\w{5}\s\((?:certain|high|medium|low)\)"
@@ -195,9 +198,16 @@ class SumPropagator(Propagator):
                     if assignment.is_false(lit):
                         possible = False
 
+            # Filter out position where a word already holds
+            if any((candidate[0:1] == self.lit_thought[lit][0:1] and assignment.is_true(lit)) for lit in self.lit_thought):
+                possible = False
+
+            # Filter out positions and words if they previously occured and it is still possible
+            if any((candidate[0:2] == self.lit_thought[lit][0:2] and assignment.is_free(lit)) for lit in self.lit_thought):
+                possible = False
+
             # Only append things which are possible
-            # if possible and not any(candidate[0:1] == value[0:1] for value in self.lit_thought.values()):
-            if possible and not any((candidate[0:1] == self.lit_thought[lit][0:1] and assignment.is_true(lit)) for lit in self.lit_thought):
+            if possible:
             # if possible:
                 tuples_list.add(candidate)
 
@@ -205,9 +215,9 @@ class SumPropagator(Propagator):
         tuples_list = sorted(tuples_list, key=lambda x: self.ranking_order[x[2]])
 
         if len(tuples_list) > BREADTH:
-            return tuples_list[0:5]
+            return tuples_list[0:BREADTH]
         else:
-            return(tuples_list)
+            return tuples_list
 
     def thought_structure(self, control, changes = []):
         # This creates the corresponding structure for the thoughts for the propagator to use
@@ -231,10 +241,10 @@ class SumPropagator(Propagator):
         # One of those literals must hold if the previous holds
         control.add_clause(lits+list(map(lambda x: -x, changes)))
 
-        # # Make sure only one is picked by adding all pairs as nogoods
-        # # Deactivating this should lead to general thought pooling
-        # for pair in itertools.combinations(list(map(lambda x: -x,lits)),2):
-        #     control.add_clause(list(pair))
+        # Make sure only one is picked by adding all pairs as nogoods
+        # Deactivating this should lead to general thought pooling
+        for pair in itertools.combinations(list(map(lambda x: -x,lits)),2):
+            control.add_clause(list(pair))
 
     def init(self, init):
         for i in init.symbolic_atoms:
@@ -273,19 +283,20 @@ class SumPropagator(Propagator):
 
     def propagate(self, control, changes):
         # manage overwriting
-        thought = self.lit_thought[changes[0]]
-        self.grid.add(thought[0],thought[1])
+        for c in changes:
+            thought = self.lit_thought[c]
+            self.grid.add(thought[0],thought[1])
 
         # Interrupt Propagation if at least one letter holds true for every field
         if all(all(any(control.assignment.is_true(i) for i in e.values()) for e in d.values()) for d in self.atom_lit.values()):
             if VERBOSE > 0: print("Done")
+            print(self.grid.get_str())
             self.done = True
             return
 
-        print(self.grid.get_str())
+        if VERBOSE <= 2: print(self.grid.get_str())
         if VERBOSE > 0: print("PROPAGATE:")
         if VERBOSE > 1: print(" Previous", changes)
-        thoughts = self._get_thoughts(control.assignment)
 
         # If not done, check whether current state is possible
         if self._check_answers:
@@ -317,14 +328,12 @@ class SumPropagator(Propagator):
                 control.propagate()
                 return
 
-        # If there are no more thoughts to pick, the current state is illegal
-        if not thoughts:
-            if VERBOSE > 0: print("No more thoughts.")
-            control.add_nogood([lit for lit in self.lit_thought if control.assignment.is_true(lit)])
+        self.thought_structure(control,changes)
 
-        # Create literals for the thoughts of the LLM, they are then used in decide to guide the search
-        else:
-            self.thought_structure(control,changes)
+        # # If there are no more thoughts to pick, the current state is illegal
+        # if not any(control.assignment.is_free(lit) for lit in self.lit_thought):
+        #     if VERBOSE > 0: print(" No more thoughts.")
+        #     control.add_nogood([lit for lit in self.lit_thought if control.assignment.is_true(lit)])
 
         control.propagate()
 
