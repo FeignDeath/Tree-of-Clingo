@@ -12,7 +12,7 @@ from prompts import evaluate
 
 from ollama import chat
 
-VERBOSE = 1
+VERBOSE = 3
 SAMPLING = 2
 BREADTH = 100
 
@@ -355,9 +355,9 @@ class SumPropagator(Propagator):
                 print(changes)
             for _ in changes:
                 self.grid.back()
-            for c in changes:
-                if c in self.lit_thought:
-                    del self.lit_thought[c]
+            # for c in changes:
+            #     if c in self.lit_thought:
+            #         del self.lit_thought[c]
 
 class MiniClingconApp(Application):
     program_name = "tree"

@@ -2,7 +2,7 @@
 
 % Prompts
 row(0,"A sweet substance").
-row(1,"A word meaning "any person that"").
+row(1,"A word meaning 'any person that'").
 row(2,"The ear").
 row(3,"A Turkish written decree").
 row(4,"A whiner").
@@ -13,28 +13,28 @@ col(3,"Apart; to the side").
 col(4,"A rosier; a rose bush").
 
 % Solution
-sol(0,0,"S").
-sol(0,1,"U").
-sol(0,2,"G").
-sol(0,3,"A").
-sol(0,4,"R").
-sol(1,0,"W").
-sol(1,1,"H").
-sol(1,2,"O").
-sol(1,3,"S").
-sol(1,4,"O").
-sol(2,0,"A").
-sol(2,1,"U").
-sol(2,2,"R").
-sol(2,3,"I").
-sol(2,4,"S").
-sol(3,0,"I").
-sol(3,1,"R").
-sol(3,2,"A").
-sol(3,3,"D").
-sol(3,4,"E").
-sol(4,0,"P").
-sol(4,1,"U").
-sol(4,2,"L").
-sol(4,3,"E").
-sol(4,4,"R").
+sol(0,0,s).
+sol(0,1,u).
+sol(0,2,g).
+sol(0,3,a).
+sol(0,4,r).
+sol(1,0,w).
+sol(1,1,h).
+sol(1,2,o).
+sol(1,3,s).
+sol(1,4,o).
+sol(2,0,a).
+sol(2,1,u).
+sol(2,2,r).
+sol(2,3,i).
+sol(2,4,s).
+sol(3,0,i).
+sol(3,1,r).
+sol(3,2,a).
+sol(3,3,d).
+sol(3,4,e).
+sol(4,0,p).
+sol(4,1,u).
+sol(4,2,l).
+sol(4,3,e).
+sol(4,4,r).

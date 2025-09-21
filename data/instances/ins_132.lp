@@ -3,7 +3,7 @@
 % Prompts
 row(0,"Extra; to withhold punishment; thin").
 row(1,"A yeoman").
-row(2,"Poetic "trapped"").
+row(2,"Poetic 'trapped'").
 row(3,"A haven").
 row(4,"An Arab prince").
 col(0,"A scythe").
@@ -13,28 +13,28 @@ col(3,"An anatomical seam, such as that between the upper lip and nose; a rib; a
 col(4,"To come in").
 
 % Solution
-sol(0,0,"S").
-sol(0,1,"P").
-sol(0,2,"A").
-sol(0,3,"R").
-sol(0,4,"E").
-sol(1,0,"Y").
-sol(1,1,"E").
-sol(1,2,"M").
-sol(1,3,"A").
-sol(1,4,"N").
-sol(2,0,"T").
-sol(2,1,"R").
-sol(2,2,"A").
-sol(2,3,"P").
-sol(2,4,"T").
-sol(3,0,"H").
-sol(3,1,"I").
-sol(3,2,"T").
-sol(3,3,"H").
-sol(3,4,"E").
-sol(4,0,"E").
-sol(4,1,"M").
-sol(4,2,"E").
-sol(4,3,"E").
-sol(4,4,"R").
+sol(0,0,s).
+sol(0,1,p).
+sol(0,2,a).
+sol(0,3,r).
+sol(0,4,e).
+sol(1,0,y).
+sol(1,1,e).
+sol(1,2,m).
+sol(1,3,a).
+sol(1,4,n).
+sol(2,0,t).
+sol(2,1,r).
+sol(2,2,a).
+sol(2,3,p).
+sol(2,4,t).
+sol(3,0,h).
+sol(3,1,i).
+sol(3,2,t).
+sol(3,3,h).
+sol(3,4,e).
+sol(4,0,e).
+sol(4,1,m).
+sol(4,2,e).
+sol(4,3,e).
+sol(4,4,r).
